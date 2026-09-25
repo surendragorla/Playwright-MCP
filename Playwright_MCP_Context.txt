@@ -1,0 +1,64 @@
+PLAYWRIGHT MCP CONTEXT
+======================
+
+Purpose:
+This context file is intended for use with a Playwright MCP (Model Context Protocol) environment.
+It provides guidance, conventions, and default automation practices.
+
+Project Context
+---------------
+Framework: Playwright
+Language: TypeScript
+Test Runner: @playwright/test
+Target Browsers:
+- Chromium
+- Firefox
+- WebKit
+
+Automation Guidelines
+---------------------
+1. Use resilient locators:
+   - getByRole()
+   - getByLabel()
+   - getByText()
+   - data-testid attributes
+
+2. Avoid hard-coded waits.
+   - Prefer auto-waiting.
+   - Use expect() assertions.
+   - Use waitForURL() when navigation is expected.
+
+3. Follow Page Object Model (POM) where appropriate.
+
+4. Keep tests independent and reusable.
+
+5. Capture traces, screenshots, and videos on failures.
+
+Coding Standards
+----------------
+- Use async/await consistently.
+- Store test data separately.
+- Keep selectors centralized when possible.
+- Use descriptive test names.
+
+Example MCP Instructions
+------------------------
+When generating Playwright code:
+- Prefer TypeScript.
+- Use Playwright Test assertions.
+- Create maintainable locators.
+- Include error handling where applicable.
+- Follow best practices for cross-browser execution.
+
+Sample Structure
+----------------
+/tests
+/pages
+/utils
+/playwright.config.ts
+
+Default Assertion Pattern
+-------------------------
+await expect(page.locator('selector')).toBeVisible();
+
+End of Context.
